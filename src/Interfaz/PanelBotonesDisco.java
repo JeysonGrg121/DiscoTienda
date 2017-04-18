@@ -15,14 +15,18 @@ import javax.swing.JPanel;
 
 /**
  * Es el panel con los botones para agregar un nuevo disco
+ * 
  */
 public class PanelBotonesDisco extends JPanel implements ActionListener{
-    private static final String CREAR_DISCO = "CrearDisco";
-    private static final String CANCELAR = "Cancelar";
-    private DCrearDisco ventana;
+    private static final String CREAR_DISCO = "CrearDisco"; // nombre del boton
+    private static final String CANCELAR = "Cancelar";// nombre del boton
+    private DCrearDisco ventana;// llama a la clase del disco
     private JButton botonAgregarDisco;
     private JButton botonCancelar;
-
+/*
+    contructor del programa
+    dcd  hace refenecia a la clase del panel de crear disco
+    */
     public PanelBotonesDisco( DCrearDisco dcd ){
 
         ventana = dcd;
@@ -38,7 +42,9 @@ public class PanelBotonesDisco extends JPanel implements ActionListener{
         add( botonCancelar );
 
     }
-
+/*
+    activacion de los botones segun el usuario
+    */
     public void actionPerformed( ActionEvent evento ){
         String comando = evento.getActionCommand( );
 

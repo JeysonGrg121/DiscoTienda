@@ -27,10 +27,16 @@ import javax.swing.border.TitledBorder;
  *
  * @author Carlos
  */
+/*
+panel que muestra los datos del disco
+*/
 public class PanelDiscos extends JPanel implements ActionListener {
     
-    private static final String CAMBIAR_DISCO = "CambiarDisco";
-    private static final String AGREGAR_DISCO = "AgregarDisco";
+    private static final String CAMBIAR_DISCO = "CambiarDisco";// nombre del combox para cambiar la selecion del dsisco
+    private static final String AGREGAR_DISCO = "AgregarDisco";// boton que ´para grerar otro disco
+    /*
+    variables necesarias para la clase y para mostrar los datos
+    */
     private InterfazDiscotienda principal;
     private Disco disco;
     private JComboBox comboDiscos;
@@ -43,7 +49,9 @@ public class PanelDiscos extends JPanel implements ActionListener {
     private JButton botonAgregarDisco;
     private JLabel etiquetaImagen;
     
-    
+    /*
+    contructor que muestra la ubicacion en la interfaz, ademas de que muestra los datos, y la imgen selecionada al c rera el disco
+    */
     public PanelDiscos( InterfazDiscotienda ventanaPrincipal, ArrayList discos ){
         principal = ventanaPrincipal;
 
@@ -97,6 +105,9 @@ public class PanelDiscos extends JPanel implements ActionListener {
 
     }
     
+    /*
+    metodo para cambiar la cancion
+    */
     public void cambiarDisco( Disco d ){
         disco = d;
         if( disco != null ){
@@ -109,14 +120,18 @@ public class PanelDiscos extends JPanel implements ActionListener {
             setBorder( new CompoundBorder( new EmptyBorder( 5, 5, 5, 5 ), new TitledBorder( "Detalles del Disco" ) ) );
         }
     }
-    
+    /*
+    metodo que refresca automaticamnete el disco.
+    */
     public void refrescarDiscos( ArrayList discos ){
         comboDiscos.removeAllItems( );
         for( int i = 0; i < discos.size( ); i++ ){
             comboDiscos.addItem( discos.get( i ) );
         }
     }
-    
+    /*
+    activacion del boton crera o agregar discol, con la activacion del combox para el cambio de discos creados
+    */
     public void actionPerformed( ActionEvent evento ){
         String comando = evento.getActionCommand( );
         if( AGREGAR_DISCO.equals( comando ) ){

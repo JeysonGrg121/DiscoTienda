@@ -16,8 +16,13 @@ import javax.swing.border.EmptyBorder;
  *
  * @author Carlos
  */
+/*
+Panel de crear la cacniom, aqui es donde se guardan las variables o string o datos de la cada cancion
+*/
 public class PanelCrearCancion extends JPanel {
-    
+    /*
+    variables necesarias para la creacion del la cacion
+    */
     private JLabel etiquetaNombre;
     private JTextField txtNombre;
     private JLabel etiquetaPrecio;
@@ -31,7 +36,9 @@ public class PanelCrearCancion extends JPanel {
     private JLabel etiquetaTamano;
     private JTextField txtTamano;
     
-    
+    /*
+    contructor principal del la clase, donde se hace el llenado correspondiente en cada variable
+    */
     public PanelCrearCancion( ){
         setLayout( new GridLayout( 6, 2, 5, 5 ) );
 
@@ -79,6 +86,10 @@ public class PanelCrearCancion extends JPanel {
 
         setBorder( new EmptyBorder( 5, 5, 5, 5 ) );
     }
+    
+    /*
+    getter an setter corespondientes de las variables para retornarlas y poderlas llamar en otras clases
+    */
     public String darNombre(){
         return txtNombre.getText( );
     }

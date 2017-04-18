@@ -27,10 +27,16 @@ import javax.swing.border.TitledBorder;
  *
  * @author Carlos
  */
+/*
+panel que muestra los datos ingresados de la caciones creadas 
+*/
 public class PanelDatosCanciones extends JPanel implements ActionListener{
 
-    private static final String CAMBIAR_CANCION = "CambiarCancion";
-    private static final String AGREGAR_CANCION = "AgregarCancion";
+    private static final String CAMBIAR_CANCION = "CambiarCancion";// nombre del combox para cambiar la cancion seleccionada
+    private static final String AGREGAR_CANCION = "AgregarCancion";// panel del boton de crear una cacnion nueva en el disco
+    /*
+    Variables necesarias para la mostrar los datos
+    */
     private InterfazDiscotienda principal;
     private Disco disco;
     private Cancion cancion;
@@ -46,7 +52,10 @@ public class PanelDatosCanciones extends JPanel implements ActionListener{
     private JLabel etiquetaTituloUnidades;
     private JButton botonAgregarCancion;
 
-    
+    /*
+    contructor inicial del programa  
+    para mostrar los datos d elas canciones cradas,o si es el deseo del usuario, agregar un nueva
+    */
     public PanelDatosCanciones( InterfazDiscotienda ventanaPrincipal ){
         principal = ventanaPrincipal;
 
@@ -113,6 +122,9 @@ public class PanelDatosCanciones extends JPanel implements ActionListener{
         add( panelBotones, BorderLayout.SOUTH );
     }
     
+    /*
+    Comboox para cambiar la cancion
+    */
     public void cambiarDisco( Disco d ){
         if( d != null )
         {
@@ -127,6 +139,9 @@ public class PanelDatosCanciones extends JPanel implements ActionListener{
             }
         }
     }
+    /*
+    metodo que refresca continuamente las cacniones del programa
+    */
     private void refrescarCanciones( ){
         comboCanciones.removeAllItems( );
         ArrayList canciones = disco.darNombresCanciones( );
@@ -137,7 +152,9 @@ public class PanelDatosCanciones extends JPanel implements ActionListener{
 
     }
 
-    
+    /*
+    metodo de activacion del boton del combox, para mostrar los datos de la cancion selecionada
+    */
     public void actionPerformed( ActionEvent evento ){
         String comando = evento.getActionCommand( );
 

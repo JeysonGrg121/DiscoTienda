@@ -4,11 +4,19 @@
  * and open the template in the editor.
  */
 package Logica;
-
+/**
+ *
+ * @author Carlos
+ */
+/*
+clase del paquete logica que guerda la lista de las canciones
+*/
 
 
 public class Cancion {
-
+/*
+    variables donde se guardan los datos en la lista de las canciones
+    */
     private String nombre;
     private int minutos;
     private int segundos;
@@ -17,7 +25,9 @@ public class Cancion {
     private double precio;
     private int unidadesVendidas;
 
-   
+/*
+    contructor inicial de la clase
+    */   
     public Cancion( String nombreC, int minutosC, int segundosC, double precioC, double tamanoC, int calidadC, int cantidad ){
         nombre = nombreC;
         minutos = minutosC;
@@ -30,7 +40,7 @@ public class Cancion {
         verificar();
     }
 
-   
+   //getter and setter de la clase para retornarlas en el paquete interfaz
     public String darNombre(){
         return nombre;
     }
@@ -68,7 +78,10 @@ public class Cancion {
     public boolean equals(String nombreCancion){
         return nombre.equalsIgnoreCase( nombreCancion );
     }
-
+    
+/*
+    metodo que verifica loas dotos si son correctos o no
+    */
     private void verificar(){
         assert nombre != null && !nombre.equals( "" ) : "El nombre es inválido";
         assert minutos >= 0 : "Los minutos deben ser un valor positivo";

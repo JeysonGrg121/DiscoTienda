@@ -21,8 +21,14 @@ import javax.swing.border.EmptyBorder;
  *
  * @author Carlos
  */
+
+/*
+panel de crear la cacnion donde se guardan los datos del disco
+*/
 public class PanelCrearDisco extends JPanel implements ActionListener{
-    
+    /*
+    variables necesarias para la clase y datos de la cacion
+    */
     private static final String Buscar_Imagen = "Buscar";
     private JLabel etiquetaTitulo;
     private JTextField txtTitulo;
@@ -74,7 +80,9 @@ public class PanelCrearDisco extends JPanel implements ActionListener{
 
         setBorder( new EmptyBorder( 5, 5, 5, 5 ) );
     }
-    
+    /*
+    getter an setter de las variables para poderlas retonarlas en otra clase
+    */
      public String darTitulo( ){
         return txtTitulo.getText( );
     }
@@ -90,6 +98,11 @@ public class PanelCrearDisco extends JPanel implements ActionListener{
     public String darImagen( ){
         return txtImagen.getText( );
     }
+    /*
+    activacion del boton de buscar la imagne con su respectiva restriccion
+    la carpeta donde busca la imagen
+    y la pantalla para buscar la imagen visualizada en el programa
+    */
     public void actionPerformed( ActionEvent evento ){
         String comando = evento.getActionCommand( );
 

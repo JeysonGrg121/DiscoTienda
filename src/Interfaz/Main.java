@@ -12,13 +12,16 @@ import Logica.Persistencia;
  *
  * @author Carlos
  */
+/*
+main principal, aqui es donde el programa arranca
+*/
 public class Main {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ){
+       
         Discotienda discotienda = null;
         try
         {
-            discotienda = new Discotienda( "./data/discotienda.discos" );
+            discotienda = new Discotienda( " " );
         }
         catch( Persistencia e )
         {
@@ -28,4 +31,6 @@ public class Main {
         InterfazDiscotienda id = new InterfazDiscotienda( discotienda );
         id.setVisible( true );
     }
+               
+        
 }

@@ -15,6 +15,9 @@ import javax.swing.border.LineBorder;
  *
  * @author Carlos
  */
+/*
+panel de la imagen de presentacion del programa
+*/
 public class PanelImagen extends JPanel{
     
      private JLabel imagen;
